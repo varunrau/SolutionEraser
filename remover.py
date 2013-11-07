@@ -39,7 +39,7 @@ class AnswerRemover():
 		self.img.save(self.outfile, "PNG")
 
 if __name__ == "__main__":
-	parser = ArgumentParser(description="first python version")
+	parser = ArgumentParser(description="Removes all red from image")
 	parser.add_argument('-i', '--infile', nargs='?', type=str, help='input file, in PNG format')
 	parser.add_argument('-o', '--outfile', nargs='?', type=str, default='out.png', help='output file, in PNG format')
 
