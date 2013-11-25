@@ -7,9 +7,9 @@ import Image
 class AnswerRemover():
 
 	def __init__(self, infile, outfile, threshold):
-		print infile
-		with Img(filename=infile, resolution=1000000) as image:
+		with Img(filename=infile, resolution=100) as image:
 			image.compression_quality = 100
+			image.format = 'png'
 			image.save(filename="temp.png")
 		self.img = Image.open("temp.png").convert("RGBA")
 		self.outfile = outfile
@@ -29,7 +29,6 @@ class AnswerRemover():
 
 	def processImage(self):
 		print "Processing..."
-
 		newData = []
 		for item in self.data:
 			if not self.isBlack(item[:3]):
